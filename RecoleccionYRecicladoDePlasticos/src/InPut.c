@@ -50,7 +50,7 @@ int RecibeCadenaSoloCaracteres(char cadena[],char mensaje[],int reintentos,int t
 				valido=1;
 				printf("Ingreso demaciados caracteres. Quedan %d intentos\n",reintentos);
 			}
-			if(auxiliarString[0]==' '||auxiliarString[0]=='\n'||valido==1)
+			if(valido==1|| auxiliarString[0]==' '||auxiliarString[0]=='\n')
 			{
 				reintentos--;
 				valido=1;
