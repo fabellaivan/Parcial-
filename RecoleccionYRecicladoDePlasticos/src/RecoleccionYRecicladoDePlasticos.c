@@ -49,7 +49,7 @@ int main(void) {
 
 		do
 		{
-			printf("\n1. Altas de cliente"
+			printf( "\n1. Altas de cliente"
 					"\n2. Modificar datos de cliente"
 					"\n3. Baja de cliente"
 					"\n4. Crear pedido de recolección: "
@@ -99,7 +99,6 @@ int main(void) {
 			break;
 			case 3:
 				testers=getNumero(&idParaBorrar, "Ingrse ID a eliminar: \n", "Error al ingresar id a borrar.\n", 3);
-				printf("%d",idParaBorrar);
 				if(testers!=0)
 				{
 					testers=BuscarClientePorId(listaClientes,TAM,idParaBorrar);
@@ -112,13 +111,17 @@ int main(void) {
 						opcionBorrar=IngresarChar("Seguro desea eliminar ? \n");
 						if(opcionBorrar=='s')
 						{
-							//listaClientes[idParaBorrar]=(listaClientes[idParaBorrar]);
+							listaClientes[idParaBorrar-1]=EliminarCliente(listaClientes[idParaBorrar-1]);
 							puts("Se ha eliminado correctamente. \n");
 						}
 						else
 						{
 							puts("Se cancelo la eliminacion");
 						}
+					}
+					else
+					{
+						printf("No se encontro el ID a Eliminar");
 					}
 				}
 
@@ -132,7 +135,7 @@ int main(void) {
 					idCliente=BuscarClientePorId(listaClientes,TAM,idAux);
 					if(idCliente==-1)
 					{
-						puts("No se encontro el ID\n");
+						printf("No se encontro el ID\n");
 					}
 					else
 					{
@@ -169,9 +172,6 @@ int main(void) {
 
 			}
 		}while (opcion != 10);
-
-
-
 
 
 return EXIT_SUCCESS;

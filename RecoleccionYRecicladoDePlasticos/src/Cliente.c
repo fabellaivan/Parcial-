@@ -45,6 +45,13 @@ int AgregarCliente(eCliente lista[],int* espacioId,int largo)
 return index;
 
 }
+eCliente EliminarCliente(eCliente lista)
+{
+
+	lista.isEmpty=EMPTY;
+
+	return lista;
+}
 int BuscarPrimerEspacioLibreCliente(eCliente lista[], int tam,int* espacioLibre)
 {
 	int i;
@@ -83,6 +90,11 @@ eCliente IngresarUnCliente(eCliente lista)
 			break;
 		}
 
+		validar=IngresarAlfanumerico(dato.cuit, "\nIngrese Cuit: \n", 50);
+		if(validar==0)
+		{
+			break;
+		}
 	}while(validacionWhile!=0);
 
 

@@ -16,7 +16,7 @@ typedef struct
 	char nombreEmpresa[50];
 	char localidad[50];
 	char direccion[50];
-	int cuit;
+	char cuit[50];
 	int isEmpty;
 	ePedidosRecoleccion pedidosDeRecoleccion;
 
@@ -31,6 +31,6 @@ int BuscarClienteParaModificar(eCliente lista[], int tam, char mensajeBusqueda[]
 int ConfirmacionDeModificarCliente(eCliente lista,char mensajeCualAModificar[], char mensajeParaConfirmar[]);
 int BuscarClientePorId(eCliente lista[], int tam, int id);
 eCliente ModificarCliente(eCliente elCliente,char mensaje[],int* refVerificacion);
-
+eCliente EliminarCliente(eCliente lista);
 
 #endif /* CLIENTE_H_ */
